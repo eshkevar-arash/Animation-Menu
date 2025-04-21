@@ -1,0 +1,131 @@
+/*
+* {
+	margin: 0;
+	padding: 0;
+	direction: rtl;
+	box-sizing: border-box;
+	text-decoration: none;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1f2124;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	height: 100vh;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 2px 3px rgba(0, 0, 0, 0.1);
+	border-radius: 8px;
+	width: 600px;
+	height: 50px;
+	position: relative;
+	background-color: #333;
+}
+
+nav a {
+	font-size: 20px;
+	color: #f4f4f4;
+	line-height: 50px;
+	text-align: center;
+	z-index: 1;
+	padding: 0 20px;
+}
+
+.anim {
+	position: absolute;
+	height: 100%;
+	z-index: 0;
+	border-radius: 8px;
+	transition: left .5s;
+	background-color: #f68657;
+	width: 78px;
+	opacity: 0;
+}*/
+/* Reset & Base Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(135deg, #1f2124 0%, #3a3d42 100%);
+	font-family: 'Segoe UI', sans-serif;
+	perspective: 1000px; /* برای افکت‌های سه‌بعدی */
+	gap: 50px;
+}
+
+/* Navigation Styles */
+.nav {
+	display: flex;
+	position: relative;
+	width: 600px;
+	height: 60px;
+	background: rgba(51, 51, 51, 0.9);
+	border-radius: 12px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3),
+	0 0 0 1px rgba(255, 255, 255, 0.1);
+	transform-style: preserve-3d;
+	overflow: hidden;
+}
+
+.nav-link {
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #f4f4f4;
+	font-size: 18px;
+	font-weight: 500;
+	z-index: 2;
+	transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	position: relative;
+	transform: translateZ(20px);
+}
+
+.nav-link:hover {
+	color: #fff;
+	text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* 3D Animation Element */
+.anim {
+	position: absolute;
+	height: 100%;
+	width: 0;
+	background: linear-gradient(90deg,
+	rgba(246, 134, 87, 0.8) 0%,
+	rgba(254, 95, 117, 0.9) 100%);
+	border-radius: 12px;
+	opacity: 0;
+	z-index: 1;
+	transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	box-shadow: 0 5px 15px rgba(254, 95, 117, 0.4);
+	transform: translateZ(10px) rotateX(5deg);
+	backface-visibility: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 650px) {
+	.nav {
+		width: 95vw;
+		height: 50px;
+	}
+	.nav-link {
+		font-size: 14px;
+	}
+}
+.text{
+	color: white;
+	font-size: 16px;
+}
